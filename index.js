@@ -42,7 +42,7 @@ serviceName = serviceName.split('.service')[0].replace('.', '-');
           if (!serviceName.includes('business')) {
             return str.startsWith(serviceName) && !str.includes('business')
           }
-          return str.includes(serviceName)
+          return str.startsWith(serviceName)
         })
         ?.split(' ')[0];
     });
