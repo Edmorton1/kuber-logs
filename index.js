@@ -5,7 +5,7 @@
 // kubectl exec -it <pod-name> -n=<namespace> -- sh
 // pm2 log 0
 
-require('dotenv').config()
+require('dotenv').config({path: require('path').join(__dirname, '.env'), quiet: true})
 const {spawn} = require('child_process');
 const run = require('./run');
 
