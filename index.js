@@ -3,7 +3,7 @@
 // Комманды:
 // kubectl get pods -n=<namespace>
 // kubectl exec -it <pod-name> -n=<namespace> -- sh
-// pm2 log
+// pm2 log 0
 
 require('dotenv').config()
 const {spawn} = require('child_process');
@@ -61,7 +61,8 @@ serviceName = serviceName.split('.service')[0].replace('.', '-');
         `-n=${NAMESPACE}`,
         '--',
         'pm2',
-        'log'
+        'log',
+        '0'
       ],
       {
         stdio: 'inherit'
